@@ -80,6 +80,8 @@ a, a:visited {
     float: right;
     margin-top: -10px;
     margin-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #ccc;
 }
 
 #sidebox p {
