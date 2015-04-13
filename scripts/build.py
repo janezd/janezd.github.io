@@ -42,7 +42,7 @@ for dir in os.listdir("."):
     main_html = md.convert(open(main).read())
     html = tpl.replace("{{main}}", main_html)
 
-    prefix = "A" + dir[:2]
+    prefix = "A{}-".format(dir[:2])
     html = insert_section(html, "plan",
     	                  "Potek učne ure",
                           parse_section(dir, "P", outdir, prefix))
@@ -55,4 +55,9 @@ for dir in os.listdir("."):
     html = insert_section(html, "material",
     	                  "Učni listi in druge datoteke",
     	                  parse_section(dir, "U", outdir, prefix))
+
+    html = insert_section(html, "resources",
+                          "Viri",
+                          parse_section(dir, "V", outdir, prefix))
+
     open(os.path.join(outdir, "main.html"), "wt").write(html)

@@ -23,7 +23,7 @@ html, body, div, span, h1, h2, h3 {
     border-radius: 6px;
     box-shadow: rgba(100, 100, 100, 0.5) 0 2px 8px;
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
 }
 
 h1, h2, h3 {
@@ -92,6 +92,16 @@ a, a:visited {
     font-size: 14px;
     color: rgb(180, 22, 44);
 }
+
+#footer {
+    text-align: center;
+    width: auto;
+}
+
+#footer p {
+    font-size: 12px;
+    margin: 2px;
+}
 </style>
 </head>
 
@@ -101,8 +111,14 @@ a, a:visited {
 {{plan}}
 {{duration}}
 {{material}}
+{{resources}}
 </div>
 <div id="main">
 {{main}}
 </div>
+</div>
+<div id="footer">
+<p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>.</p>
+<p>Stran pripravlja in vzdržuje Janez Demšar, na podlagi začetne oblike, ki jo je pripravila <a href="http://www.fri.uni-lj.si">Fakulteta za računalništvo</a> Univerze v Ljubljani.</p>
+<p>Po pravilih licence <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons</a> je dovoljeno gradivo uporabljati in razširjati ob navedbi avtorjev. Komercialna raba in izvedena dela so prepovedana.</p>
 </div>
