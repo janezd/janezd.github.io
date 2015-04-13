@@ -1,0 +1,55 @@
+Krajši zapis besedila
+=====================
+
+Da zapišemo črko s številko, potrebujemo pet prstov ali piskov ali znakcev, ne? Ne. Lahko jih potrebujemo tudi manj in več. (Manj in več?!)
+
+Namen
+-----
+
+Otroci spoznajo idejo “kodiranja”: podatke lahko zapisujemo različno učinkovito, z različno dolžino zapisa. Mimogrede spoznavajo tudi drevesa.
+
+**Ozadje:** [Huffmanovo kodiranje](http://en.wikipedia.org/wiki/Huffman_coding)
+
+**Potrebne predhodne aktivnosti:** Do koliko lahko šteje stonoga?, Zapis in prenos besedil
+
+Potrebščine
+-----------
+
+Za vsakega otroka
+
+- Trakci z besedili, ki jih bodo brali otroci; besedilo lahko pripraviš na [temu namenjeni strani](A03-Stran za pripravo trakov z besedili.html). Pripravi nekajkrat več trakcev, kot je otrok, saj bodo hoteli ponavljati igro
+- Vsak otrok potrebuje tudi pisalo
+- Otrokom utegne priti prav tudi tabela s črkami, ki je na poli Ujeti Štefan iz prejšnje aktivnosti
+- Kreda za risanje dreves (drevesa so velika in zahtevajo kar nekaj krede)
+
+Drevesa za kodiranje, narisana na šolskem dvorišču ali označena na travniku ali drugem primernem mestu. Namesto tega lahko natisnemo tudi liste z drevesi za vsakega otroka.
+
+Dodatna navodila
+----------------
+
+Aktivnost je najboljše izvajati na prostem.
+
+Na tla boš morala narisati drevo; primerna so asfaltna tla pred šolo, risanja pa bo zahtevalo veliko krede. Druga možnost je, da drevesa pripraviš na travniku tako, da v tla zapičiš palice in med njimi povlečeš vrvice, na koncu pa so zastavice z listki. To je primernejše za večje dogodke, saj zahteva več priprav.
+
+Drevesa so na koncu tega opisa aktivnosti in na ločenih listih. Risanje Huffmanovega drevesa je zahtevnejše, zato je na listu narisano na kvadratni mreži. Mreže ne prerisuješ, temveč služi le kot pomoč pri risanju.
+
+Narišeš lahko eno, dva ali tri drevesa.
+
+Huffmanovo drevo, v katerem so različne črke na različni globini, je bistveni del aktivnosti.
+
+V drugem drevesu so vse črke na isti višini. Drevo ustreza kodiranju, kakršnega je uporabljal ujeti Štefan. Za otroke je koristno, da vidijo povezavo med dvojiškim številskim sistemom in drevesi. Iz dreves vidijo tudi, kakšna je razlika med kodiranjem z enako in različno dolžino kod. Iz primerjave dreves jim je “fizično” očitno, da so pri Huffmanovem drevesu pogosti znaki bližje.
+
+Drevo, ki ustreza Morsejevi kodi je zanimivo zaradi Morsejeve kode kot takšne, v sklopu aktivnosti pa je zanimivo, ker kaže primer kodiranja, v katerem je koda določenega znaka lahko prefiks kode drugega znaka. Tako je, na primer, črka I zapisana kot “..”, U pa kot “..-”. Zaradi tega v Morsejevem kodiranju potrebujemo tudi “presledke” med znaki. Morsejeva koda torej nima le dveh znakov, pike in črte, temveč tudi presledek.
+
+Presodi, ali označiti veje s črkama L in D ali ne. Drevesa bodo preglednejša brez njih. Pri mlajših otrokih jih lahko izpustiš tudi, da bodo vadili levo in desno, vendar to raje stori le pri drevesih s konstantno dolžino zapisa, kjer bo zaradi ene napačne smeri napačna le ena črka. Pri Huffmanovih drevesih bo že ena napaka pokvarila večji del sporočila.
+
+Za vsakega otroka pripravi trakove s sporočili. Otroci naj imajo različna sporočila, sicer bodo vsi hodili po isti poti. Na traku naj bo tudi dovolj prostora, da bodo otroci vanj pisali prebrano sporočilo.
+
+Uporabiš lahko sporočila, objavljena na strani, ali pa sestaviš svoja s pomočjo temu namenjene spletne strani (glej povezavo na spletni strani z opisom aktivnosti – vanjo le skopiraš besedila, rezultat pa kopiraš v urejevalnik besedil, malo urediš in natisneš). Ker bo tega več listov, si boš delo precej olajšala, če bodo vsi zapisi dolgi enako število vrstic in boš lahko rezala več listov hkrati. (Sporočila, ki so objavljena na strani, so že pripravljena tako.)
+
+Pri Huffmanovem kodiranju lahko uporabiš različico s presledki med znaki ali takšno, v kateri presledkov ni. Druga je veliko poučnejša, vendar ji je nekoliko težje slediti, zato pri mlajših otrocih (npr. prvi razredi OŠ) raje uporabi (tudi?) prvo.
+
+Drugi viri in avtorji
+---------------------
+
+Navdih za uvodni del prihaja S [CS Unplugged: Sound Representation](http://csunplugged.org/modem). Avtor drugega dela je Janez Demšar, po ideji Mika Fellowsa, enega od avtorjev CS Unplugged.
