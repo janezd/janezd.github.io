@@ -1,3 +1,12 @@
+Priprava: Zapis in prenos besedil.pdf
+Datoteke: 
+	Ujeti Štefan.pdf
+	Besede s štirimi črkami.pdf
+	Trakci z odstavkom besedila.pdf
+Trajanje: 1 šolska ura
+Vir: http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
+
+
 Zapis in prenos besedil
 =======================
 
@@ -33,10 +42,57 @@ Za tekmovanje:
 
 - en komplet oštevilčenih trakcev z odstavkom besedila za vsako skupino
 
-Viri in druga literatura
+Priprava lastnih besedil
 ------------------------
 
-[Stran za pripravo besedila](A02-Stran za pripravo besedila.html)
+<script>
+
+abeceda = 'abcčdefghijklmnoprsštuvzž.,';
+
+function enc_bin(c) {
+    var e = '';
+    for(var i = 5; i; i--) {
+        e += c < 16 ? '0' : '1';
+        c = (c & 15) << 1
+    }
+    return e;
+}
+
+
+function encode_all(txt) {
+    //alert("X");
+    txt = ' ' + txt.toLocaleLowerCase();
+    var i = 0;
+    var enc = '<p>';
+    for(c = 0; c < txt.length; c++) {
+        var e = abeceda.indexOf(txt[c]);
+        if (e == -1) {
+            while (e == -1) {
+                c++;
+                if (c == txt.length) {
+                    break;
+                }
+                var e = abeceda.indexOf(txt[c]);
+            }
+            if (c == txt.length) {
+                break;
+            }
+            i++;
+            enc += '</p>\n<p>' + i.toString() + '&nbsp;&nbsp;&nbsp;&nbsp;';
+        }
+        enc += enc_bin(e + 1) + '&nbsp;&nbsp;&nbsp;';
+    }
+    enc += "</p>";
+    document.getElementById('encoded').innerHTML = enc;
+}
+
+</script>
+
+Če želite sestaviti svoje besedilo, ga vpišite tule.
+
+<textarea rows="10" cols="80" onkeyup="encode_all(this.value)"></textarea>
+<div style="border: 2px solid black; padding: 4px; min-height: 20px;" id="encoded"></div>
+
 
 Drugi viri in avtorji
 ---------------------

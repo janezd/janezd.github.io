@@ -19,7 +19,7 @@ html, body, div, span, h1, h2, h3 {
 }
 
 #body {
-    padding: 24px 20px 20px 20px;
+    padding: 40px 20px 20px 20px;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 100, 0.5) 0 2px 8px;
     max-width: 980px;
@@ -37,17 +37,18 @@ h1 {
 	margin-bottom: 24px;
 	font-size: 22px;
     border-bottom-width: 2px;
+    padding-bottom: 3px;
 }
 
 h1 + p {
 	/*font-size: 18px;*/
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 }
 
 h2 {
 	font-size: 18px;
 	height: 24px;
-	margin-top: 20px;
+	margin-top: 28px;
     border-bottom-width: 1px;
 }
 
@@ -73,26 +74,34 @@ a, a:visited {
 
 #main {
 	width: 620px;
-	margin-right: 98px;
+    position:relative;
+	left: 280px;
 }
 
 #sidebox {
-    float: right;
-    margin-top: -10px;
-    margin-right: 10px;
-    padding-left: 10px;
-    border-left: 1px solid #ccc;
+    position: absolute;
+    left: -275px;
+    top: -16px;
+    /*margin-top: -10px;
+    margin-left: 0px;*/
+    padding: 10px 10px 10px 15px;
+    width: 230px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
 }
 
 #sidebox p {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 22px ;
+    text-indent: -22px ;
 }
 
 #sidebox h2 {
     font-weight: medium;
     font-size: 14px;
     color: rgb(180, 22, 44);
+    margin-top: 40px;
 }
 
 #footer {
@@ -104,18 +113,25 @@ a, a:visited {
     font-size: 12px;
     margin: 2px;
 }
+
+#thumb {
+}
 </style>
 </head>
 
 <div id="header"></div>
 <div id="body">
+<div id="main">
 <div id="sidebox">
+{{thumbnail}}
 {{plan}}
 {{duration}}
 {{material}}
 {{resources}}
+{{source}}
+{{video}}
+{{links}}
 </div>
-<div id="main">
 {{main}}
 </div>
 </div>

@@ -1,5 +1,23 @@
+Priprava: Dvojiški zapis števil.pdf
+Datoteke: 
+	Velike karte.pdf
+	Karte, trakovi in učni listi.pdf
+	Ujeti Štefan.pdf
+	Zahtevnejša vprašanja za zvedave.pdf
 Trajanje: 2 uri
-Vir: [CS Unplugged: Binary Numbers](http://csunplugged.org/binary-numbers)
+Vir: 
+    http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
+Video:
+	http://www.youtube.com/watch?v=b6vHZ95XDwU CS Unplugged: Count the Dots
+	http://www.youtube.com/watch?v=Pz7dLWvi2w0#! CS Unplugged: Binary Counting
+	http://www.youtube.com/watch?v=xc0stfTVE_8 CS Unplugged: Binary Numbers
+	http://www.youtube.com/watch?v=Bke95oWWZII Count to 31 on One Hand
+	http://www.youtube.com/watch?v=jJad2IBcwCM Hannah Counts Binary on Her Fingers
+Povezave:
+	http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
+	http://en.wikipedia.org/wiki/Finger_binary Wikipedia: Finger Counting
+	http://britton.disted.camosun.bc.ca/chinesering/ninering.html Chinese Ring Puzzle
+
 
 Do koliko lahko šteje stonoga?
 ==============================
@@ -45,18 +63,3 @@ Aktivnost je namerno oblikovana tako, da vodi v drugo, intuitivnejše pretvarjan
 
 Ob tem naj ponovno poudarimo, da namen aktivnosti ni naučiti se pretvarjati med dvojiškim in desetiškim zapisom, temveč "začutiti" dvojiški zapis, razumeti, kako je sestavljen in zakaj je uporaben – zato, ker lahko s pomočjo dvojiškega zapisa shranjujemo podatke ali pa jih prenašamo z vsakim medijem, ki ima dva različni stanji.
 
-Video posnetki
---------------
-
-- [CS Unplugged: Count the Dots](http://www.youtube.com/watch?v=b6vHZ95XDwU)
-- [CS Unplugged - The Show: Binary Counting](http://www.youtube.com/watch?v=Pz7dLWvi2w0#!)
-- [CS Unplugged - The Show: Binary Numbers - Email](http://www.youtube.com/watch?v=xc0stfTVE_8)
-- [How to Count to 31 on One Hand](http://www.youtube.com/watch?v=Bke95oWWZII)
-- [Hannah Counts Binary on Her Fingers](http://www.youtube.com/watch?v=jJad2IBcwCM)
-
-Viri in druga literatura
-------------------------
-
-- [CS Unplugged: Binary Numbers](http://csunplugged.org/binary-numbers)
-- [Wikipedia: Finger Counting](http://en.wikipedia.org/wiki/Finger_binary)
-- [Chinese Ring Puzzle](http://britton.disted.camosun.bc.ca/chinesering/ninering.html)
