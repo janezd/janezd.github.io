@@ -4,9 +4,6 @@ import shutil
 from collections import defaultdict
 import markdown
 
-sections = [("Potek učne ure", "P"),
-            ("Učni listi in druge datoteke", "U")]
-
 def parse_section(files, dir, outdir):
     if not files:
         return ""
@@ -29,15 +26,18 @@ def insert_section(template, id, heading, content):
 tpl = open("page.tpl").read()
 os.chdir("..")
 
-if not os.path.exists("web"):
-    os.mkdir("web")
+base_out = os.path.expanduser("~/Desktop/vidra")
+if not os.path.exists(base_out):
+    os.mkdir(base_out)
+
+shutil.copyfile("vidra.css", os.path.join(base_out, "vidra.css"))
 
 for dir in os.listdir("."):
     main = os.path.join(dir, "main.txt")
     if not os.path.exists(main):
         continue
 
-    outdir = os.path.join("web", dir)
+    outdir = os.path.join(base_out, dir)
     if not os.path.exists(outdir):
         os.mkdir(outdir)
     md = markdown.Markdown(extensions=["markdown.extensions.meta"])
