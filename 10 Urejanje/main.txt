@@ -14,7 +14,7 @@ Povezave:
 	http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm Wikipedija: Deli in vladaj
 	http://en.wikipedia.org/wiki/Time_complexity Wikipedija: Časovna zahtevnost
 Povzetek:
-	Ah, kolikokrat je potrebno urediti kakšne reči po abecedi, velikosti ali čem tretjem. Tudi računalniki to pogosto počnejo; čemu, smo se naučili ob potapljanju ladjic. Odkrili bomo, kako delujejo postopki, ki jih uporabljajo računalniki. Bogve, morda pridejo kdaj prav tudi nam.
+	Ah, kolikokrat je potrebno urediti kakšne reči po abecedi, velikosti ali čem tretjem.
 
 Namen
 -----
