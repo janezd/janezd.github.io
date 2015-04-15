@@ -58,6 +58,10 @@ a, a:visited {
     padding-left: 20px;
 }
 
+#toc th {
+    padding-bottom: 16px;
+}
+
 #toc h2 {
     margin-top: 8px;
 }
