@@ -10,6 +10,7 @@ Povezave:
 Povzetek:
 	Ena najbolj nadležnih lastnosti računalnikov je, da vedno naredijo natanko to, kar jim naročimo.
 
+
 Če smo pri dajanju navodil – se pravi programiranju – nepazljivi, so lahko rezultati smešno napačni. Kako se počutita programer in računalnik, bomo spoznali, ko bomo sami poskušali narisati sliko po navodilih sošolke ali sošolca.
 
 Namen
