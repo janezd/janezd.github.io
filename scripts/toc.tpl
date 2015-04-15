@@ -6,9 +6,8 @@
 <body>
 <div id="header"></div>
 <div id="body">
-<table id="toc">
 {{entries}}
-</table>
+<div class="clear">
 </div>
 </body>
 </html>

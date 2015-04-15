@@ -21,6 +21,7 @@
 <p>{{summary}}<p>
 {{main}}
 </div>
+<div class="clear"></div>
 </div>
 <div id="footer">
 <p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
