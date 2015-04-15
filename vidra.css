@@ -1,4 +1,4 @@
-body {
+body, table {
 	font-family: Arial, sans-serif;
 	font-size: 13px;
 	line-height: 19px;
@@ -48,6 +48,19 @@ a, a:visited {
 	text-decoration: none;
 }
 
+#toc a, a:visited {
+    color: black;
+}
+
+#toc td {
+    vertical-align: top;
+    padding-left: 20px;
+}
+
+#toc h2 {
+    margin-top: 8px;
+}
+
 #header {
 	background-color: #b4162c;
 	background-image: -webkit-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
@@ -57,7 +70,7 @@ a, a:visited {
     position: relative;
     z-index: 10;
     display: block;
-    height: 90px;
+    height: 40px; /*90px;*/
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.74902) 0px 0px 15px 0px;
     margin-bottom: 25px;

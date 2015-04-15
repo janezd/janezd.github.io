@@ -17,6 +17,8 @@
 {{video}}
 {{links}}
 </div>
+<h1>{{title}}</h1>
+<p>{{summary}}<p>
 {{main}}
 </div>
 </div>

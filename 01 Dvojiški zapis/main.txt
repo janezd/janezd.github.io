@@ -1,3 +1,4 @@
+Naslov: Do koliko lahko šteje stonoga?
 Priprava: Dvojiški zapis števil.pdf
 Datoteke: 
 	Velike karte.pdf
@@ -17,12 +18,9 @@ Povezave:
 	http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
 	http://en.wikipedia.org/wiki/Finger_binary Wikipedia: Finger Counting
 	http://britton.disted.camosun.bc.ca/chinesering/ninering.html Chinese Ring Puzzle
-
-
-Do koliko lahko šteje stonoga?
-==============================
-
-Do koliko lahko preštejemo s prsti obeh rok? Do deset, praviš? Neumnost. Že s prsti ene roke je vendar mogoče šteti do 31.
+Povzetek:
+	Do koliko lahko preštejemo s prsti obeh rok? Do deset, praviš? Neumnost.
+	Že s prsti ene roke je vendar mogoče šteti do 31.
 
 Namen
 -----

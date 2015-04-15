@@ -46,7 +46,10 @@ def build_page(dir):
     else:
         duration = ""
     html = html.replace("{{duration}}", duration)
-
+    title = md.Meta.get("naslov")[0]
+    summary  = " ".join(md.Meta.get("povzetek"))
+    html = html.replace("{{title}}", title)
+    html = html.replace("{{summary}}", summary)
     for id, heading, meta in (
             ("plan", "Potek učne ure", "priprava"),
             ("material", "Učni listi in druge datoteke", "datoteke"),
@@ -57,18 +60,26 @@ def build_page(dir):
                               parse_section(md.Meta.get(meta), dir, outdir))
 
     open(os.path.join(outdir, "main.html"), "wt").write(html)
+    return title, summary
 
 
 tpl = open("page.tpl").read()
+toc = open("toc.tpl").read()
 os.chdir("..")
 
 base_out = os.path.expanduser("~/Desktop/vidra")
 if not os.path.exists(base_out):
     os.mkdir(base_out)
-
 shutil.copyfile("vidra.css", os.path.join(base_out, "vidra.css"))
 
-for dir in os.listdir("."):
+all_pages = []
+for dir in sorted(os.listdir(".")):
     if os.path.exists(os.path.join(dir, "main.txt")):
-        build_page(dir)
+        title, summary = build_page(dir)
+        all_pages.append((dir, title, summary))
 
+entries = "\n".join('<tr><th><a href="{0}/main.html"><img src="{0}/thumbnail.png"/></a></th>'
+                    '<td><a href="{0}/main.html"><h2>{1}</h2><p>{2}</p></a></td></tr>'.
+                    format(dir, title, summary)
+                    for dir, title, summary in all_pages)
+open(os.path.join(base_out, "index.html"), "wt").write(toc.replace("{{entries}}", entries))

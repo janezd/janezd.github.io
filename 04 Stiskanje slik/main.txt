@@ -1,3 +1,4 @@
+Naslov: Stiskanje slik
 Priprava: Stiskanje slik.pdf
 Datoteke: 
 	Učni listi.pdf
@@ -9,12 +10,11 @@ Video:
 Povezave:
 	http://en.wikipedia.org/wiki/Pixel Wikipedija: Bitne slike
     http://en.wikipedia.org/wiki/Run-length_encoding Stiskanje s četami
-
-
-Stiskanje slik
-==============
-
-Prva aktivnost nas je naučila, kako računalnik zapisuje števila in kako je mogoče s številkami zapisovati tudi besedila. Zdaj bomo videli, kako s številkami opišemo sliko. Opazili bomo tudi, da je lahko opis slike precej dolg, vendar ga lahko z nekaj zvitosti skrajšamo.
+Povzetek:
+    Prva aktivnost nas je naučila, kako računalnik zapisuje števila in kako
+    je mogoče s številkami zapisovati tudi besedila. Zdaj bomo videli, kako
+    s številkami opišemo sliko. Opazili bomo tudi, da je lahko opis slike
+    precej dolg, vendar ga lahko z nekaj zvitosti skrajšamo.
 
 Namen
 -----

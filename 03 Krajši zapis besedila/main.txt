@@ -1,3 +1,7 @@
+Naslov: Krajši zapis besedila
+Povzetek:
+	Da zapišemo črko s številko, potrebujemo pet prstov ali piskov ali
+	znakcev, ne? Ne. Lahko jih potrebujemo tudi manj in več. (Manj in več?!)
 Priprava: Krajši zapis besedila.pdf
 Datoteke: 
 	Drevesa.pdf
@@ -10,12 +14,6 @@ Datoteke:
 Trajanje: 1 šolska ura
 Povezave:
 	http://en.wikipedia.org/wiki/Huffman_coding Huffmanovo kodiranje
-
-
-Krajši zapis besedila
-=====================
-
-Da zapišemo črko s številko, potrebujemo pet prstov ali piskov ali znakcev, ne? Ne. Lahko jih potrebujemo tudi manj in več. (Manj in več?!)
 
 Namen
 -----

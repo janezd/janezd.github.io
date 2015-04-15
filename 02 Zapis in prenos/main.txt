@@ -1,3 +1,4 @@
+Naslov: Zapis in prenos besedil
 Priprava: Zapis in prenos besedil.pdf
 Datoteke: 
 	Ujeti Štefan.pdf
@@ -5,12 +6,8 @@ Datoteke:
 	Trakci z odstavkom besedila.pdf
 Trajanje: 1 šolska ura
 Vir: http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
-
-
-Zapis in prenos besedil
-=======================
-
-Če zna računalnik zapisovati le številke – kako potem shrani besedila?
+Povzetek:
+	Če zna računalnik zapisovati le številke – kako potem shrani besedila?
 
 Namen
 -----
