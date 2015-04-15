@@ -19,7 +19,7 @@ html, body, div, span, h1, h2, h3 {
 }
 
 #body {
-    padding: 40px 20px 20px 20px;
+    padding: 32px 20px 20px 20px;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 100, 0.5) 0 2px 8px;
     max-width: 980px;
@@ -29,27 +29,22 @@ html, body, div, span, h1, h2, h3 {
 h1, h2, h3 {
 	font-family: 'Klavika Medium', sans-serif;
 	font-stretch: 70%;
-    border-bottom-color: rgb(153, 153, 153);
-    border-bottom-style: dotted;
 }
 
 h1 {
 	margin-bottom: 24px;
-	font-size: 22px;
-    border-bottom-width: 2px;
+	font-size: 28px;
     padding-bottom: 3px;
 }
 
 h1 + p {
-	/*font-size: 18px;*/
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 
 h2 {
 	font-size: 18px;
 	height: 24px;
-	margin-top: 28px;
-    border-bottom-width: 1px;
+	margin-top: 40px;
 }
 
 a, a:visited {
@@ -81,9 +76,7 @@ a, a:visited {
 #sidebox {
     position: absolute;
     left: -275px;
-    top: -16px;
-    /*margin-top: -10px;
-    margin-left: 0px;*/
+    top: -8px;
     padding: 10px 10px 10px 15px;
     width: 230px;
     background-color: #f8f8f8;
@@ -136,7 +129,6 @@ a, a:visited {
 </div>
 </div>
 <div id="footer">
-<p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>.</p>
-<p>Stran pripravlja in vzdržuje Janez Demšar, na podlagi začetne oblike, ki jo je pripravila <a href="http://www.fri.uni-lj.si">Fakulteta za računalništvo</a> Univerze v Ljubljani.</p>
+<p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
 <p>Po pravilih licence <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons</a> je dovoljeno gradivo uporabljati in razširjati ob navedbi avtorjev. Komercialna raba in izvedena dela so prepovedana.</p>
 </div>
