@@ -8,7 +8,7 @@
 <div id="body">
 <div id="main">
 <div id="sidebox">
-{{thumbnail}}
+    <img id="thumb" src="thumbnail.png"/>
 {{plan}}
 {{duration}}
 {{material}}

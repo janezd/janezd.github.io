@@ -26,21 +26,14 @@ def build_page(dir):
     outdir = os.path.join(base_out, dir)
     if not os.path.exists(outdir):
         os.mkdir(outdir)
+    shutil.copyfile(os.path.join(dir, "thumbnail.png"),
+                    os.path.join(outdir, "thumbnail.png"))
     md = markdown.Markdown(extensions=["markdown.extensions.meta"])
     main_html = md.convert(open(os.path.join(dir, "main.txt")).read())
-    html = tpl.replace("{{main}}", main_html)
-
     meta = defaultdict(str)
     meta.update(md.Meta)
 
-    thumb = os.path.join(dir, "thumbnail.png")
-    if os.path.exists(thumb):
-        shutil.copyfile(thumb, os.path.join(outdir, "thumbnail.png"))
-        thumb = '<img id="thumb" src="thumbnail.png"/>'
-    else:
-        thumb = ''
-    html = html.replace("{{thumbnail}}", thumb)
-
+    html = tpl.replace("{{main}}", main_html)
     if "trajanje" in md.Meta:
         duration = "<b>Trajanje</b>: " + md.Meta.get("trajanje")[0]
     else:
@@ -75,8 +68,12 @@ shutil.copyfile("vidra.css", os.path.join(base_out, "vidra.css"))
 all_pages = []
 for dir in sorted(os.listdir(".")):
     if os.path.exists(os.path.join(dir, "main.txt")):
-        title, summary = build_page(dir)
-        all_pages.append((dir, title, summary))
+        try:
+            title, summary = build_page(dir)
+            all_pages.append((dir, title, summary))
+        except Exception as err:
+            print("Error while parsing {}:\n{}".format(dir, err))
+
 
 entries = "\n".join('<tr><th><a href="{0}/main.html"><img src="{0}/thumbnail.png"/></a></th>'
                     '<td><a href="{0}/main.html"><h2>{1}</h2><p>{2}</p></a></td></tr>'.
