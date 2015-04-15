@@ -81,6 +81,6 @@ entries = ['<tr><th><a href="{0}/main.html"><img src="{0}/thumbnail.png"/></a></
            for dir, title, summary in all_pages]
 tocdivs = "\n".join(
     '<div id="col{}"><table class="toc">{{}}</table></div>'.format(i) for i in "12")
-entries = tocdivs.format("\n".join(entries[:len(entries) // 2]),
+entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
 open(os.path.join(base_out, "index.html"), "wt").write(toc.replace("{{entries}}", entries))
