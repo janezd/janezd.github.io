@@ -101,8 +101,9 @@ a, a:visited {
 }
 
 #main {
-	width: 620px;
-  margin: 8px 0 0 275px;
+    max-width: 620px;
+    min-width: 320px;
+    margin: 8px 0 0 275px;
 }
 
 #sidebox {
@@ -143,3 +144,41 @@ a, a:visited {
 .clear { 
     clear: both; 
     height: 1px;}
+
+#sidebar-toggle-checkbox {
+    display: none;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+@media (max-width: 630px) {
+    #sidebar-toggle {
+        display: block;
+    }
+
+    input + label + #sidebox {
+        display: none !important;
+    }
+
+    input:checked + label + #sidebox{
+        display: block !important;
+    }
+
+    #main {
+        margin: 20px 0 0 0;
+        float: left;
+    }
+}
