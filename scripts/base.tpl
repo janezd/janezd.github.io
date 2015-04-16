@@ -15,6 +15,9 @@
     </span>
     </div>
 </div>
+<div id="body">
 {{body}}
+<div class="clear"></div>
+</div>
 </body>
 </html>

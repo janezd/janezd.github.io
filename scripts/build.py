@@ -62,6 +62,8 @@ def build_page(dir):
 tpl = open("page.tpl").read()
 base = open("base.tpl").read()
 base_root = base.replace("../", "")
+static = base_root.replace('<div id="body">',
+                           '<div id="body" class="no-sidebox">')
 os.chdir("..")
 
 base_out = os.path.expanduser("~/Desktop/vidra")
@@ -73,7 +75,7 @@ for fname in static_files:
 for fname in os.listdir("."):
     if os.path.splitext(fname)[1] == ".html":
         contents = open(fname).read()
-        contents = base_root.replace("{{body}}", contents)
+        contents = static.replace("{{body}}", contents)
         open(os.path.join(base_out, fname), "wt").write(contents)
 
 all_pages = []
@@ -94,5 +96,4 @@ tocdivs = "\n".join(
     '<div id="col{}"><table class="toc">{{}}</table></div>'.format(i) for i in "12")
 entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
-entries = '<div id="body">\n{}\n<div class="clear"></div>\n</div>'.format(entries)
 open(os.path.join(base_out, "index.html"), "wt").write(base_root.replace("{{body}}", entries))
