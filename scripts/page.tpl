@@ -6,7 +6,6 @@
 <body>
 <div id="header"></div>
 <div id="body">
-<div id="main">
 <div id="sidebox">
     <img id="thumb" src="thumbnail.png"/>
 {{plan}}
@@ -17,11 +16,11 @@
 {{video}}
 {{links}}
 </div>
+<div id="main">
 <h1>{{title}}</h1>
 <p>{{summary}}<p>
 {{main}}
 </div>
-<div class="clear"></div>
 </div>
 <div id="footer">
 <p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
