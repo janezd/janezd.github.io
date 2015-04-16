@@ -6,7 +6,9 @@
 <body>
 <div id="header"></div>
 <div id="body">
-<div id="sidebox">
+<input type="checkbox" id='sidebar-toggle-checkbox'>
+<label for='sidebar-toggle-checkbox' id='sidebar-toggle'><h1>Materiali <span class="arrow"></span></h1></label>
+<div id="sidebox" class="tgl">
     <img id="thumb" src="thumbnail.png"/>
 {{plan}}
 {{duration}}
