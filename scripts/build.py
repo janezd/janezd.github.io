@@ -4,6 +4,8 @@ import shutil
 from collections import defaultdict
 import markdown
 
+static_files = ("vidra.css", )
+
 def parse_section(files, dir, outdir):
     if not files:
         return ""
@@ -52,18 +54,27 @@ def build_page(dir):
         html = insert_section(html, id, heading,
                               parse_section(md.Meta.get(meta), dir, outdir))
 
+    html = base.replace("{{body}}", html)
     open(os.path.join(outdir, "main.html"), "wt").write(html)
     return title, summary
 
 
 tpl = open("page.tpl").read()
-toc = open("toc.tpl").read()
+base = open("base.tpl").read()
+base_root = base.replace("../", "")
 os.chdir("..")
 
 base_out = os.path.expanduser("~/Desktop/vidra")
 if not os.path.exists(base_out):
     os.mkdir(base_out)
-shutil.copyfile("vidra.css", os.path.join(base_out, "vidra.css"))
+
+for fname in static_files:
+    shutil.copyfile(fname, os.path.join(base_out, fname))
+for fname in os.listdir("."):
+    if os.path.splitext(fname)[1] == ".html":
+        contents = open(fname).read()
+        contents = base_root.replace("{{body}}", contents)
+        open(os.path.join(base_out, fname), "wt").write(contents)
 
 all_pages = []
 for dir in sorted(os.listdir(".")):
@@ -83,4 +94,5 @@ tocdivs = "\n".join(
     '<div id="col{}"><table class="toc">{{}}</table></div>'.format(i) for i in "12")
 entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
-open(os.path.join(base_out, "index.html"), "wt").write(toc.replace("{{entries}}", entries))
+entries = '<div id="body">\n{}\n<div class="clear"></div>\n</div>'.format(entries)
+open(os.path.join(base_out, "index.html"), "wt").write(base_root.replace("{{body}}", entries))

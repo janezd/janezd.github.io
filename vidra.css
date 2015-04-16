@@ -22,7 +22,13 @@ html, body, div, span, h1, h2, h3 {
     min-height: 630px;
     margin: 0 auto 30px auto;
     overflow: hidden;
+    background-color: white;
 }
+
+#body.no-sidebox {
+    max-width: 705px;
+}
+
 
 h1, h2, h3 {
 	font-family: 'Klavika Medium', sans-serif;
@@ -33,10 +39,6 @@ h1 {
 	margin-bottom: 24px;
 	font-size: 28px;
     padding-bottom: 3px;
-}
-
-h1 + p {
-	margin-bottom: 30px;
 }
 
 h2 {
@@ -86,13 +88,12 @@ a, a:visited {
     float: right;
 }
 #header {
-	background-color: #b4162c;
+	background-color: #681d1d; /*#b4162c;
 	background-image: -webkit-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
 	background-image: -moz-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
     background-image: -o-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
-    background-image: linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
+    background-image: linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);*/
     position: relative;
-    z-index: 10;
     display: block;
     height: 40px; /*90px;*/
     padding: 10px;
@@ -100,10 +101,43 @@ a, a:visited {
     margin-bottom: 25px;
 }
 
+#header #menu {
+    max-width: 980px;
+    margin: 0 auto 0px auto;
+}
+
+#header a, #header a:visited {
+    color: white;
+    margin: 0 20px 0 20px;
+}
+
+#header-left {
+    font-size: 20px;
+}
+
+#header-left a, #header-left a:visited {
+    padding: 3px 28px 3px 28px;
+    margin-left: 32px;
+    background-color: #822323;
+    border-radius: 4px;
+}
+
+#header-right {
+    font-size: 16px;
+    float: right;
+    margin-right: 40px;
+}
+
 #main {
     max-width: 620px;
     min-width: 320px;
     margin: 8px 0 0 275px;
+}
+
+.no-sidebox #main {
+    max-width: 620px;
+    min-width: 320px;
+    margin-left: 20px;
 }
 
 #sidebox {
@@ -179,8 +213,11 @@ a, a:visited {
 
     input:checked + label + #sidebox{
         display: block !important;
+        width: 300px;
+        position: absolute;
+        border: 1px solid #ccc;
+        top: 110px;
     }
-
     input:checked + label .arrow {
         border-top: 0;
         border-bottom: 5px solid black;
