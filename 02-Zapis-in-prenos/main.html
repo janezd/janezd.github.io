@@ -1,0 +1,119 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../vidra.css"/>
+</head>
+<body>
+<div id="header">
+    <div id="menu">
+    <span id="header-left">
+        <a href="../index.html">Kazalo</a>
+    </span>
+    <span id="header-right">
+        <a href="../o_strani.html">O strani</a>
+        <a href="../sorodne_strani.html">Sorodne strani</a>
+    </span>
+    </div>
+</div>
+<div id="body">
+<input type="checkbox" id='sidebar-toggle-checkbox'>
+<label for='sidebar-toggle-checkbox' id='sidebar-toggle'><h1>Materiali <span class="arrow"></span></h1></label>
+<div id="sidebox" class="tgl">
+    <img id="thumb" src="thumbnail.png"/>
+<h2>Potek učne ure</h2><p><a href="Zapis in prenos besedil.pdf">Zapis in prenos besedil</a></p>
+
+<b>Trajanje</b>: 1 šolska ura
+<h2>Učni listi in druge datoteke</h2><p><a href="Ujeti Štefan.pdf">Ujeti Štefan</a></p>
+<p><a href="Besede s štirimi črkami.pdf">Besede s štirimi črkami</a></p>
+<p><a href="Trakci z odstavkom besedila.pdf">Trakci z odstavkom besedila</a></p>
+
+
+<h2>Vir</h2><p><a href="http://csunplugged.org/binary-numbers">CS Unplugged: Binary Numbers</a></p>
+
+
+
+</div>
+<div id="main">
+<h1>Zapis in prenos besedil</h1>
+<p> Če zna računalnik zapisovati le številke – kako potem shrani besedila?</p>
+<h2>Namen</h2>
+<p>Aktivnost osmisli prejšnjo: v prejšnji izvedo, da računalnik shranjuje le številke in izvedo, kako to počne. Zdaj vidijo, da lahko s številkami zapisujemo tudi druge reči, kot na primer besedila.</p>
+<p>Vaja predstavlja tudi urjenje v seštevanju števil do 25.</p>
+<p><strong>Potrebne predhodne aktivnosti:</strong> <a href="/do-koliko-lahko-steje-stonoga">Do koliko lahko šteje stonoga?</a></p>
+<h2>Potrebščine</h2>
+<p>Za vsakega učenca (ali za par):</p>
+<ul>
+<li>pola s sporočilom ujetega Štefana,</li>
+<li>nekaj listkov z besedami; natisni in razreži nekaj izvodov pole s 55 besedami.</li>
+</ul>
+<p>Za vsako skupino štirih učencev: različne “priprave” za shranjevanje in prenos dveh stanj, na primer:</p>
+<ul>
+<li>dve zastavici različnih barv,</li>
+<li>dve ropotuljici z različnim zvokom,</li>
+<li>piščalko ali ksilofon (zadoščata dva različna tona),</li>
+<li>dva lonca različne velikost in kuhalnica,</li>
+<li>vrv dolžine cca 2 m, 20 ščipalk za perilo in 20 starih igralnih kart ali listkov, ki so po eni strani črni ali po drugi beli,</li>
+<li>vrv dolžine cca 2m in 40 ščipalk za perilo v dveh različnih barvah – po 20 vsake barve</li>
+</ul>
+<p>Za tekmovanje:</p>
+<ul>
+<li>en komplet oštevilčenih trakcev z odstavkom besedila za vsako skupino</li>
+</ul>
+<h2>Priprava lastnih besedil</h2>
+<script>
+
+abeceda = 'abcčdefghijklmnoprsštuvzž.,';
+
+function enc_bin(c) {
+    var e = '';
+    for(var i = 5; i; i--) {
+        e += c < 16 ? '0' : '1';
+        c = (c & 15) << 1
+    }
+    return e;
+}
+
+
+function encode_all(txt) {
+    //alert("X");
+    txt = ' ' + txt.toLocaleLowerCase();
+    var i = 0;
+    var enc = '<p>';
+    for(c = 0; c < txt.length; c++) {
+        var e = abeceda.indexOf(txt[c]);
+        if (e == -1) {
+            while (e == -1) {
+                c++;
+                if (c == txt.length) {
+                    break;
+                }
+                var e = abeceda.indexOf(txt[c]);
+            }
+            if (c == txt.length) {
+                break;
+            }
+            i++;
+            enc += '</p>\n<p>' + i.toString() + '&nbsp;&nbsp;&nbsp;&nbsp;';
+        }
+        enc += enc_bin(e + 1) + '&nbsp;&nbsp;&nbsp;';
+    }
+    enc += "</p>";
+    document.getElementById('encoded').innerHTML = enc;
+}
+
+</script>
+
+<p>Če želite sestaviti svoje besedilo, ga vpišite tule.</p>
+<p><textarea rows="10" cols="80" onkeyup="encode_all(this.value)"></textarea>
+<div style="border: 2px solid black; padding: 4px; min-height: 20px;" id="encoded"></div></p>
+<h2>Drugi viri in avtorji</h2>
+<p>Ujeti Štefan prihaja s <a href="http://csunplugged.org/binary-numbers">CS Unplugged: Count the Dots</a>, ostala inspiracija za sicer izvirno aktivnost pa s <a href="http://csunplugged.org/modem">CS Unplugged: Modems Unplugged</a></p>
+</div>
+</div>
+<div id="footer">
+<p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
+<p>Po pravilih licence <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons</a> je dovoljeno gradivo uporabljati in razširjati ob navedbi avtorjev. Komercialna raba in izvedena dela so prepovedana.</p>
+<div class="clear"></div>
+</div>
+</body>
+</html>
