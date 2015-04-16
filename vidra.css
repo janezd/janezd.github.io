@@ -15,12 +15,13 @@ html, body, div, span, h1, h2, h3 {
 }
 
 #body {
-    padding: 32px 20px 20px 20px;
+    padding: 24px 20px 20px 25px;
     border-radius: 6px;
     box-shadow: rgba(100, 100, 100, 0.5) 0 2px 8px;
     max-width: 980px;
     min-height: 630px;
     margin: 0 auto 30px auto;
+    overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -101,14 +102,11 @@ a, a:visited {
 
 #main {
 	width: 620px;
-    position:relative;
-	left: 280px;
+  margin: 8px 0 0 275px;
 }
 
 #sidebox {
-    position: absolute;
-    left: -275px;
-    top: -8px;
+    float: left;
     padding: 10px 10px 10px 15px;
     width: 230px;
     background-color: #f8f8f8;
