@@ -88,11 +88,13 @@ a, a:visited {
     float: right;
 }
 #header {
-	background-color: #681d1d; /*#b4162c;
-	background-image: -webkit-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
-	background-image: -moz-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
-    background-image: -o-linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);
-    background-image: linear-gradient(left, #b4162c 0%, #b4162c 50%, #8b1221 100%);*/
+    background: #7f0019; /* Old browsers */
+    background: -moz-linear-gradient(left, #7f0019 0%, #6d0019 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7f0019), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #7f0019 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #7f0019 0%,#6d0019 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #7f0019 0%,#6d0019 100%); /* IE10+ */
+    background: linear-gradient(to right, #7f0019 0%,#6d0019 100%); /* W3C */
     position: relative;
     display: block;
     height: 40px; /*90px;*/
@@ -118,7 +120,7 @@ a, a:visited {
 #header-left a, #header-left a:visited {
     padding: 3px 28px 3px 28px;
     margin-left: 32px;
-    background-color: #822323;
+    background-color: #9F1427;
     border-radius: 4px;
 }
 
