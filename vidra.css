@@ -153,15 +153,14 @@ a, a:visited {
     display: none;
 }
 
-.caret {
-    display: inline-block;
+.arrow {
     width: 0;
     height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: inline-block;
     margin-left: 2px;
     vertical-align: middle;
-    border-top: 4px dashed;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
 }
 
 @media (max-width: 630px) {
@@ -173,8 +172,18 @@ a, a:visited {
         display: none !important;
     }
 
+    input + label .arrow {
+      border-top: 5px solid black;
+      border-bottom: 0;
+    }
+
     input:checked + label + #sidebox{
         display: block !important;
+    }
+
+    input:checked + label .arrow {
+        border-top: 0;
+        border-bottom: 5px solid black;
     }
 
     #main {
