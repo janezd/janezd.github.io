@@ -2,9 +2,10 @@ import os
 import re
 import shutil
 from collections import defaultdict
+import unicodedata
 import markdown
 
-static_files = ("vidra.css", "o_strani.txt")
+static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt")
 
 def parse_section(files, dir, outdir):
     if not files:
@@ -24,8 +25,14 @@ def insert_section(template, id, heading, content):
 		content = "<h2>{}</h2>{}".format(heading, content)
 	return template.replace("{{{{{}}}}}".format(id), content)
 
+def no_carets(s):
+    s = unicodedata.normalize("NFD", dir)
+    s = s.replace(chr(780), "").replace(" ", "-")
+    return s
+
 def build_page(dir):
-    outdir = os.path.join(base_out, dir)
+    new_dir = no_carets(dir)
+    outdir = os.path.join(base_out, new_dir)
     if not os.path.exists(outdir):
         os.mkdir(outdir)
     shutil.copyfile(os.path.join(dir, "thumbnail.png"),
@@ -56,7 +63,7 @@ def build_page(dir):
 
     html = base.replace("{{body}}", html)
     open(os.path.join(outdir, "main.html"), "wt").write(html)
-    return title, summary
+    return new_dir, title, summary
 
 
 tpl = open("page.tpl").read()
@@ -85,8 +92,8 @@ all_pages = []
 for dir in sorted(os.listdir(".")):
     if os.path.exists(os.path.join(dir, "main.txt")):
         try:
-            title, summary = build_page(dir)
-            all_pages.append((dir, title, summary))
+            new_dir, title, summary = build_page(dir)
+            all_pages.append((new_dir, title, summary))
         except Exception as err:
             print("Error while parsing {}:\n{}".format(dir, err))
 
