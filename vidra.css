@@ -1,7 +1,8 @@
-body, table {
-	font-family: Arial, sans-serif;
-	font-size: 13px;
-	line-height: 19px;
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 19px;
+    min-width: 480px;
 }
 
 html, body, div, span, h1, h2, h3 {
@@ -38,12 +39,12 @@ h1, h2, h3 {
 h1 {
 	margin-bottom: 24px;
 	font-size: 28px;
-    padding-bottom: 3px;
+            padding-bottom: 3px;
 }
 
 h2 {
 	font-size: 18px;
-	height: 24px;
+	min-height: 24px;
 	margin-top: 40px;
 }
 
@@ -56,37 +57,32 @@ a, a:visited {
     color: black;
 }
 
-.toc td {
-    vertical-align: top;
-    padding-left: 20px;
-    padding-bottom: 20px;
+.toc .thumbnail {
+    float: left;
 }
 
-.toc th {
-    vertical-align: top;
-    padding-bottom: 16px;
-}
-
-.toc tr { 
-    display: block;
+.toc {
+    clear: left;
     margin-bottom: 15px;
+    margin-right: 0px;
 }
 
-.toc h2 {
+.toc .desc {
+    margin-left: 120px;
     margin-top: 8px;
+    margin-right: 10px;
 }
 
 #col1, #col2 {
     width: 48%;
+    float: left;
+    min-width: 450;
 }
 
 #col1 {
-    float: left;
+    margin-right: 20px;
 }
 
-#col2 {
-    float: right;
-}
 #header {
     background: #7f0019; /* Old browsers */
     background: -moz-linear-gradient(left, #7f0019 0%, #6d0019 100%); /* FF3.6+ */
@@ -179,7 +175,8 @@ a, a:visited {
 
 .clear { 
     clear: both; 
-    height: 1px;}
+    height: 1px;
+}
 
 #sidebar-toggle-checkbox {
     display: none;

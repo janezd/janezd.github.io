@@ -98,12 +98,11 @@ for dir in sorted(os.listdir(".")):
             print("Error while parsing {}:\n{}".format(dir, err))
 
 
-entries = ['<tr><th><a href="{0}/main.html"><img src="{0}/thumbnail.png"/></a></th>'
-           '<td><a href="{0}/main.html"><h2>{1}</h2><p>{2}</p></a></td></tr>'.
+entries = ['<div class="toc"><a href="{0}/main.html" class="thumbnail"><img src="{0}/thumbnail.png"/></a>'
+           '<div class="desc"><a href="{0}/main.html"><h2>{1}</h2><p>{2}</p></a></div></div>'.
            format(dir, title, summary)
            for dir, title, summary in all_pages]
-tocdivs = "\n".join(
-    '<div id="col{}"><table class="toc">{{}}</table></div>'.format(i) for i in "12")
+tocdivs = "\n".join('<div id="col{}">{{}}</div>'.format(i) for i in "12")
 entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
 open(os.path.join(base_out, "index.html"), "wt").write(base_root.replace("{{body}}", entries))
