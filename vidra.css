@@ -9,7 +9,6 @@ html, body, div, span, h1, h2, h3 {
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: baseline;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -23,34 +22,31 @@ html, body, div, span, h1, h2, h3 {
     min-height: 630px;
     margin: 0 auto 30px auto;
     overflow: hidden;
-    background-color: white;
 }
 
 #body.no-sidebox {
     max-width: 705px;
 }
 
-
-h1, h2, h3 {
-	font-family: 'Klavika Medium', sans-serif;
-	font-stretch: 70%;
+h1, h2 {
+    color: #5e0019;
 }
 
 h1 {
-	margin-bottom: 24px;
-	font-size: 28px;
-            padding-bottom: 3px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    padding-bottom: 3px;
 }
 
 h2 {
-	font-size: 18px;
-	min-height: 24px;
-	margin-top: 40px;
+    font-size: 18px;
+    min-height: 24px;
+    margin-top: 40px;
 }
 
 a, a:visited {
-	color: rgb(138, 29, 44);
-	text-decoration: none;
+    color: #8a1d2c;
+    text-decoration: none;
 }
 
 .toc a, .toc a:visited {
@@ -59,18 +55,17 @@ a, a:visited {
 
 .toc .thumbnail {
     float: left;
+    margin-bottom: 36px;
 }
 
 .toc {
     clear: left;
-    margin-bottom: 25px;
-    margin-right: 0px;
+    margin: 5px 0 40px 5px;
 }
 
 .toc .desc {
-    margin-left: 120px;
-    margin-top: 8px;
-    margin-right: 10px;
+    margin: 0px 10px auto 121px;
+    padding-top: 8px;
 }
 
 .toc h2 {
@@ -78,12 +73,12 @@ a, a:visited {
 }
 
 #col1, #col2 {
-    width: 48%;
+    width: 48.5%;
     float: left;
 }
 
 #col1 {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 #header {
@@ -96,7 +91,7 @@ a, a:visited {
     background: linear-gradient(to right, #7f0019 0%,#6d0019 100%); /* W3C */
     position: relative;
     display: block;
-    height: 40px; /*90px;*/
+    height: 40px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.74902) 0px 0px 15px 0px;
     margin-bottom: 25px;
@@ -145,7 +140,7 @@ a, a:visited {
     float: left;
     padding: 10px 10px 10px 15px;
     width: 230px;
-    background-color: #f8f8f8;
+    background-color: #f0f0f0;
     border-radius: 6px;
 }
 
@@ -159,13 +154,13 @@ a, a:visited {
 #sidebox h2 {
     font-weight: medium;
     font-size: 14px;
-    color: rgb(180, 22, 44);
     margin-top: 40px;
 }
 
 #footer {
     text-align: center;
     width: auto;
+    margin-bottom: 10px;
 }
 
 #footer p {
@@ -173,12 +168,8 @@ a, a:visited {
     margin: 2px;
 }
 
-#thumb {
-}
-
 .clear { 
     clear: both; 
-    height: 1px;
 }
 
 #sidebar-toggle-checkbox {
@@ -199,7 +190,7 @@ a, a:visited {
     vertical-align: middle;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 878px) {
     #col1, #col2 {
         width: 100%;
     }
