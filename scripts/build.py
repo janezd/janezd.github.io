@@ -5,7 +5,7 @@ from collections import defaultdict
 import unicodedata
 import markdown
 
-static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt")
+static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt", "favicon.ico")
 
 def parse_section(files, dir, outdir):
     if not files:
@@ -80,13 +80,14 @@ if not os.path.exists(base_out):
 for fname in static_files:
     shutil.copyfile(fname, os.path.join(base_out, fname))
 for fname in static_files:
-    contents = open(fname).read()
+    mode = "tb"[os.path.splitext(fname)[1] in (".ico",)]
+    contents = open(fname, "r" + mode).read()
     if os.path.splitext(fname)[1] == ".txt":
         contents = markdown.markdown(contents)
         fname = fname[:-3] + "html"
     if os.path.splitext(fname)[1] == ".html":
         contents = static.replace("{{body}}", contents)
-    open(os.path.join(base_out, fname), "wt").write(contents)
+    open(os.path.join(base_out, fname), "w" + mode).write(contents)
 
 all_pages = []
 for dir in sorted(os.listdir(".")):
