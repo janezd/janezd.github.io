@@ -6,7 +6,7 @@ import unicodedata
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
-static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt", "favicon.ico")
+static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt", "favicon.ico", "CNAME")
 
 def parse_section(files, dir, outdir):
     if not files:
