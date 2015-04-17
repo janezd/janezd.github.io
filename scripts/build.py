@@ -5,6 +5,7 @@ from collections import defaultdict
 import unicodedata
 import markdown
 
+site_title = "Vidra - Računalništvo brez računalnika"
 static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt", "favicon.ico")
 
 def parse_section(files, dir, outdir):
@@ -30,6 +31,9 @@ def no_carets(s):
     s = s.replace(chr(780), "").replace(" ", "-")
     return s
 
+def use_template(template, **kwargs):
+    return re.sub(r"\{\{(.*?)\}\}", lambda x: kwargs[x.group(1)], template)
+
 def build_page(dir):
     new_dir = no_carets(dir)
     outdir = os.path.join(base_out, new_dir)
@@ -38,20 +42,15 @@ def build_page(dir):
     shutil.copyfile(os.path.join(dir, "thumbnail.png"),
                     os.path.join(outdir, "thumbnail.png"))
     md = markdown.Markdown(extensions=["markdown.extensions.meta"])
-    main_html = md.convert(open(os.path.join(dir, "main.txt")).read())
+    main = md.convert(open(os.path.join(dir, "main.txt")).read())
     meta = defaultdict(str)
     meta.update(md.Meta)
 
-    html = tpl.replace("{{main}}", main_html)
-    if "trajanje" in md.Meta:
-        duration = "<b>Trajanje</b>: " + md.Meta.get("trajanje")[0]
-    else:
-        duration = ""
-    html = html.replace("{{duration}}", duration)
+    duration = ("<b>Trajanje</b>: " + md.Meta.get("trajanje")[0]
+                if "trajanje" in md.Meta else "")
     title = md.Meta.get("naslov")[0]
-    summary  = " ".join(md.Meta.get("povzetek"))
-    html = html.replace("{{title}}", title)
-    html = html.replace("{{summary}}", summary)
+    summary = " ".join(md.Meta.get("povzetek"))
+    html = tpl
     for id, heading, meta in (
             ("plan", "Potek učne ure", "priprava"),
             ("material", "Učni listi in druge datoteke", "datoteke"),
@@ -60,8 +59,8 @@ def build_page(dir):
             ("links", "Povezave", "povezave")):
         html = insert_section(html, id, heading,
                               parse_section(md.Meta.get(meta), dir, outdir))
-
-    html = base.replace("{{body}}", html)
+    html = use_template(html, **locals())
+    html = use_template(base, body=html, title="Vidra - " + title)
     open(os.path.join(outdir, "main.html"), "wt").write(html)
     return new_dir, title, summary
 
@@ -86,7 +85,9 @@ for fname in static_files:
         contents = markdown.markdown(contents)
         fname = fname[:-3] + "html"
     if os.path.splitext(fname)[1] == ".html":
-        contents = static.replace("{{body}}", contents)
+        mo_title = re.search("<h1>(.*?)</h1>", contents)
+        title = mo_title and ("Vidra - " + mo_title.group(1)) or site_title
+        contents = use_template(static, body=contents, title=title)
     open(os.path.join(base_out, fname), "w" + mode).write(contents)
 
 all_pages = []
@@ -106,4 +107,5 @@ entries = ['<div class="toc"><a href="{0}/main.html" class="thumbnail"><img src=
 tocdivs = "\n".join('<div id="col{}">{{}}</div>'.format(i) for i in "12")
 entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
-open(os.path.join(base_out, "index.html"), "wt").write(base_root.replace("{{body}}", entries))
+toc = use_template(base_root, body=entries, title=site_title)
+open(os.path.join(base_out, "index.html"), "wt").write(toc)
