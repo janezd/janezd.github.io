@@ -63,7 +63,7 @@ a, a:visited {
 
 .toc {
     clear: left;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     margin-right: 0px;
 }
 
@@ -73,10 +73,13 @@ a, a:visited {
     margin-right: 10px;
 }
 
+.toc h2 {
+    margin-top: 0;
+}
+
 #col1, #col2 {
     width: 48%;
     float: left;
-    min-width: 450;
 }
 
 #col1 {
@@ -196,7 +199,17 @@ a, a:visited {
     vertical-align: middle;
 }
 
+@media (max-width: 780px) {
+    #col1, #col2 {
+        width: 100%;
+    }
+}
+
 @media (max-width: 630px) {
+    #body {
+        box-shadow: none;
+    }
+
     #sidebar-toggle {
         display: block;
     }
