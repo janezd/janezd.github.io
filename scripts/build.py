@@ -8,6 +8,27 @@ site_title = "Vidra - Računalništvo brez računalnika"
 static_files = ("o_strani.txt", "sorodne_strani.txt")
 
 
+class ActLinks(markdown.inlinepatterns.Pattern):
+    def handleMatch(self, m):
+        el = markdown.util.etree.Element("a")
+        act = m.group(2)
+        if "|" in act:
+            link, el.text = act.split("|")
+        else:
+            link = el.text = act
+        el.text = el.text.strip()
+        el.set("href", "../" + no_carets(link).lower())
+        return el
+
+
+class ActLinkExtension(markdown.extensions.Extension):
+    def extendMarkdown(self, md, md_globals):
+        ACTIVITY_LINK_RE = r"\(\(([^\)]+)\)\)"
+        activitylinkPattern = ActLinks(ACTIVITY_LINK_RE)
+        md.inlinePatterns.add('activity_link', activitylinkPattern,
+            "<not_strong")
+
+
 def parse_section(files):
     if not files:
         return ""
@@ -29,7 +50,7 @@ def insert_section(template, id, heading, content):
 
 def no_carets(s):
     s = unicodedata.normalize("NFD", s)
-    s = s.replace(chr(780), "").replace(" ", "-")
+    s = s.strip().replace(chr(780), "").replace(" ", "-")
     return s
 
 
@@ -38,7 +59,8 @@ def use_template(template, **kwargs):
 
 
 def build_page():
-    md = markdown.Markdown(extensions=["markdown.extensions.meta"])
+    md = markdown.Markdown(extensions=["markdown.extensions.meta",
+                                       ActLinkExtension()])
     main = md.convert(open("index.txt").read())
     meta = defaultdict(str)
     meta.update(md.Meta)
