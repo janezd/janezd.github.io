@@ -102,9 +102,9 @@ entries = tocdivs.format("\n".join(entries[:mid]),
 toc = use_template(base_root, body=entries, title=site_title)
 open("index.html", "wt").write(toc)
 
-import http.server
-import socketserver
-Handler = http.server.SimpleHTTPRequestHandler
-httpd = socketserver.TCPServer(("", 8000), Handler)
-webbrowser.open_new_tab("http://127.0.0.1:8000")
-httpd.serve_forever()
+#import http.server
+#import socketserver
+#Handler = http.server.SimpleHTTPRequestHandler
+#httpd = socketserver.TCPServer(("", 8000), Handler)
+#webbrowser.open_new_tab("http://127.0.0.1:8000")
+#httpd.serve_forever()
