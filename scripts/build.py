@@ -2,7 +2,6 @@ import os
 import re
 from collections import defaultdict
 import unicodedata
-import webbrowser
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
@@ -101,10 +100,3 @@ entries = tocdivs.format("\n".join(entries[:mid]),
                          "\n".join(entries[mid::]))
 toc = use_template(base_root, body=entries, title=site_title)
 open("index.html", "wt").write(toc)
-
-#import http.server
-#import socketserver
-#Handler = http.server.SimpleHTTPRequestHandler
-#httpd = socketserver.TCPServer(("", 8000), Handler)
-#webbrowser.open_new_tab("http://127.0.0.1:8000")
-#httpd.serve_forever()
