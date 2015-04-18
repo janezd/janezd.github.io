@@ -60,7 +60,7 @@ a, a:visited {
 
 .thumbnail {
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 2px;
 }
 
