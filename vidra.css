@@ -55,7 +55,13 @@ a, a:visited {
 
 .toc .thumbnail {
     float: left;
-    margin-bottom: 36px;
+    margin: 10px 0px 32px 7px;
+}
+
+.thumbnail {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 2px;
 }
 
 .toc {
