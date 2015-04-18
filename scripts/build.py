@@ -3,6 +3,7 @@ import re
 import shutil
 from collections import defaultdict
 import unicodedata
+import webbrowser
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
@@ -35,7 +36,7 @@ def use_template(template, **kwargs):
     return re.sub(r"\{\{(.*?)\}\}", lambda x: kwargs[x.group(1)], template)
 
 def build_page(dir):
-    new_dir = no_carets(dir)
+    new_dir = no_carets(dir)[3:].lower()
     outdir = os.path.join(base_out, new_dir)
     if not os.path.exists(outdir):
         os.mkdir(outdir)
@@ -61,7 +62,7 @@ def build_page(dir):
                               parse_section(md.Meta.get(meta), dir, outdir))
     html = use_template(html, **locals())
     html = use_template(base, body=html, title="Vidra - " + title)
-    open(os.path.join(outdir, "main.html"), "wt").write(html)
+    open(os.path.join(outdir, "index.html"), "wt").write(html)
     return new_dir, title, summary
 
 
@@ -108,4 +109,13 @@ tocdivs = "\n".join('<div id="col{}">{{}}</div>'.format(i) for i in "12")
 entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
                          "\n".join(entries[len(entries) // 2:]))
 toc = use_template(base_root, body=entries, title=site_title)
-open(os.path.join(base_out, "index.html"), "wt").write(toc)
+index = os.path.join(base_out, "index.html")
+open(index, "wt").write(toc)
+
+import http.server
+import socketserver
+os.chdir(base_out)
+Handler = http.server.SimpleHTTPRequestHandler
+httpd = socketserver.TCPServer(("", 8000), Handler)
+webbrowser.open_new_tab("http://127.0.0.1:8000")
+httpd.serve_forever()
