@@ -1,15 +1,15 @@
 import os
 import re
-import shutil
 from collections import defaultdict
 import unicodedata
 import webbrowser
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
-static_files = ("vidra.css", "o_strani.txt", "sorodne_strani.txt", "favicon.ico", "CNAME")
+static_files = ("o_strani.txt", "sorodne_strani.txt")
 
-def parse_section(files, dir, outdir):
+
+def parse_section(files):
     if not files:
         return ""
     s = ""
@@ -18,32 +18,29 @@ def parse_section(files, dir, outdir):
         if fname.startswith("http"):
             s += line.format(*fname.split(" ", 1))
         elif fname: 
-            shutil.copyfile(os.path.join(dir, fname), os.path.join(outdir, fname))
             s += line.format(fname, os.path.splitext(fname)[0])
     return s
+
 
 def insert_section(template, id, heading, content):
 	if content:
 		content = "<h2>{}</h2>{}".format(heading, content)
 	return template.replace("{{{{{}}}}}".format(id), content)
 
+
 def no_carets(s):
-    s = unicodedata.normalize("NFD", dir)
+    s = unicodedata.normalize("NFD", s)
     s = s.replace(chr(780), "").replace(" ", "-")
     return s
+
 
 def use_template(template, **kwargs):
     return re.sub(r"\{\{(.*?)\}\}", lambda x: kwargs[x.group(1)], template)
 
-def build_page(dir):
-    new_dir = no_carets(dir)[3:].lower()
-    outdir = os.path.join(base_out, new_dir)
-    if not os.path.exists(outdir):
-        os.mkdir(outdir)
-    shutil.copyfile(os.path.join(dir, "thumbnail.png"),
-                    os.path.join(outdir, "thumbnail.png"))
+
+def build_page():
     md = markdown.Markdown(extensions=["markdown.extensions.meta"])
-    main = md.convert(open(os.path.join(dir, "main.txt")).read())
+    main = md.convert(open("index.txt").read())
     meta = defaultdict(str)
     meta.update(md.Meta)
 
@@ -58,47 +55,40 @@ def build_page(dir):
             ("resources", "Viri", "viri"), ("source", "Vir", "vir"),
             ("video", "Video posnetki", "video"),
             ("links", "Povezave", "povezave")):
-        html = insert_section(html, id, heading,
-                              parse_section(md.Meta.get(meta), dir, outdir))
+        html = insert_section(
+            html, id, heading, parse_section(md.Meta.get(meta)))
     html = use_template(html, **locals())
     html = use_template(base, body=html, title="Vidra - " + title)
-    open(os.path.join(outdir, "index.html"), "wt").write(html)
-    return new_dir, title, summary
+    open("index.html", "wt").write(html)
+    return title, summary
 
 
-tpl = open("page.tpl").read()
-base = open("base.tpl").read()
+base_dir = os.getcwd()
+tpl = open("scripts/page.tpl").read()
+base = open("scripts/base.tpl").read()
 base_root = base.replace("../", "")
 static = base_root.replace('<div id="body">',
                            '<div id="body" class="no-sidebox">')
-os.chdir("..")
-
-base_out = os.path.expanduser("~/Desktop/vidra")
-if not os.path.exists(base_out):
-    os.mkdir(base_out)
 
 for fname in static_files:
-    shutil.copyfile(fname, os.path.join(base_out, fname))
-for fname in static_files:
-    mode = "tb"[os.path.splitext(fname)[1] in (".ico",)]
-    contents = open(fname, "r" + mode).read()
-    if os.path.splitext(fname)[1] == ".txt":
-        contents = markdown.markdown(contents)
-        fname = fname[:-3] + "html"
-    if os.path.splitext(fname)[1] == ".html":
-        mo_title = re.search("<h1>(.*?)</h1>", contents)
-        title = mo_title and ("Vidra - " + mo_title.group(1)) or site_title
-        contents = use_template(static, body=contents, title=title)
-    open(os.path.join(base_out, fname), "w" + mode).write(contents)
+    body = markdown.markdown(open(fname).read())
+    mo_title = re.search("<h1>(.*?)</h1>", body)
+    title = mo_title and ("Vidra - " + mo_title.group(1)) or site_title
+    html = use_template(static, **locals())
+    open(fname[:-4] + ".html", "w").write(html)
 
 all_pages = []
-for dir in sorted(os.listdir(".")):
-    if os.path.exists(os.path.join(dir, "main.txt")):
-        try:
-            new_dir, title, summary = build_page(dir)
-            all_pages.append((new_dir, title, summary))
-        except Exception as err:
-            print("Error while parsing {}:\n{}".format(dir, err))
+for act in open("scripts/list.txt"):
+    try:
+        act = act.strip()
+        dir = no_carets(act.lower())
+        os.chdir(dir)
+        title, summary = build_page()
+        all_pages.append((dir, title, summary))
+    except Exception as err:
+        print("Error while parsing {}:\n{}".format(act, err))
+    finally:
+        os.chdir(base_dir)
 
 
 entries = ['<div class="toc"><a href="{0}" class="thumbnail"><img src="{0}/thumbnail.png"/></a>'
@@ -110,12 +100,10 @@ mid = (len(entries) + 1)// 2
 entries = tocdivs.format("\n".join(entries[:mid]),
                          "\n".join(entries[mid::]))
 toc = use_template(base_root, body=entries, title=site_title)
-index = os.path.join(base_out, "index.html")
-open(index, "wt").write(toc)
+open("index.html", "wt").write(toc)
 
 import http.server
 import socketserver
-os.chdir(base_out)
 Handler = http.server.SimpleHTTPRequestHandler
 httpd = socketserver.TCPServer(("", 8000), Handler)
 webbrowser.open_new_tab("http://127.0.0.1:8000")
