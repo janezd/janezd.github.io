@@ -17,7 +17,11 @@ class ActLinks(markdown.inlinepatterns.Pattern):
         else:
             link = el.text = act
         el.text = el.text.strip()
-        el.set("href", "../" + no_carets(link).lower())
+        link = no_carets(link).lower()
+        if not os.path.exists(os.path.join("..", link, "index.txt")):
+            print("Warning: missing internal link from {} to {}".
+                format(os.path.split(os.getcwd())[-1], link))
+        el.set("href", "../" + link)
         return el
 
 
