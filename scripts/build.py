@@ -106,8 +106,9 @@ entries = ['<div class="toc"><a href="{0}" class="thumbnail"><img src="{0}/thumb
            format(dir, title, summary)
            for dir, title, summary in all_pages]
 tocdivs = "\n".join('<div id="col{}">{{}}</div>'.format(i) for i in "12")
-entries = tocdivs.format("\n".join(entries[:(len(entries) + 1)// 2]),
-                         "\n".join(entries[len(entries) // 2:]))
+mid = (len(entries) + 1)// 2
+entries = tocdivs.format("\n".join(entries[:mid]),
+                         "\n".join(entries[mid::]))
 toc = use_template(base_root, body=entries, title=site_title)
 index = os.path.join(base_out, "index.html")
 open(index, "wt").write(toc)
