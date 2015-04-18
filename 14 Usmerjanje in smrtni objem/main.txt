@@ -1,0 +1,46 @@
+Naslov: Usmerjanje in smrtni objem
+Priprava: Smrtni objem.pdf
+Datoteke: 
+	Nekaj mrež.pdf
+Trajanje: Ena šolska ura
+Vir: 
+    http://csunplugged.org/routing-and-deadlock CS Unplugged: Routing and Deadlock
+    http://mathmaniacs.org/lessons/16-deadlock/index.html MATHmaniaCS: Deadlock
+Video:
+    http://www.youtube.com/watch?feature=player_embedded&v=WforXEBMm5k CS Unplugged: The Orange Game
+Povezave:
+	http://en.wikipedia.org/wiki/Deadlock Wikipedija: Smrtni objem
+	http://en.wikipedia.org/wiki/Graph_traversal Wikipedija: Preiskovanje grafa
+	http://en.wikipedia.org/wiki/A*_search_algorithm Wikipedija: Preiskovalni algoritmi (A*)
+Povzetek:
+	Alenka ne bo vrnila Petru žoge, dokler se ji ta ne opraviči za ono prej.
+	Peter pa se nima namena opravičiti, če mu Alenka ne bo najprej vrnila žoge.
+	Računalnikarji bi rekli, da sta Alenka in Peter znašla v smrtnem objemu.
+	Hm, kaj pa imajo s tovrstnimi ljubezenskimi zapleti računalnikarji?!
+
+Namen
+-----
+Intuitivno razumevanje “smrtnega objema” (deadlock), v katerem dva ali več ljudi (ali računalnikov, računalniških programov…) v neskončnost čaka eden na drugega.
+
+Igra zahteva razmišljanje za nekaj korakov naprej. Učenci naletijo na problem preiskovanja, ki je zelo pomemben v umetni inteligenci in drugod.
+
+Igre v tej aktivnosti so zanimive z vidika skupinske dinamike in koordinacije.
+
+Potrebščine
+-----------
+
+Igra podajanja
+
+- Pobarvane žogice za namizni tenis ali podobne predmete. Za vsako skupino potrebuješ toliko različnih barv, kolikor otrok je v skupini; za vsako barvo razen ene potrebuješ dva enaka predmeta. Če imaš, na primer, skupine s šestimi otroki, potrebuješ dve beli, dve rumeni, dve rdeči, dve modri, dve zeleni in eno rjavo žogico.
+- Istobarvne oznake za otroke, npr. barvne trakove, ki si privežejo okrog vratu (glave, rok).
+
+Vsi na svoja mesta
+
+- Barvni trakovi, kot v prejšnji igri
+- Pisane zastavice ali obroči enakih barv kot trakovi
+- Ena ali več žog (glej “Dodatne možnosti”)
+- Štoparica (opcijsko)
+
+Drugi viri in avtorji
+
+Igra podajanja je priredba [CS Unplugged: Routing and Deadlock](http://csunplugged.org/routing-and-deadlock), Vsi na svoja mesta pa [MATHmaniaCS: Deadlock](http://mathmaniacs.org/lessons/16-deadlock/index.html).

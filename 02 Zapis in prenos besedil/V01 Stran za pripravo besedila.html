@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Kodiranje besedila z različnimi sistemi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+    body {
+        font-family: "Arial";
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+</style>
+<script>
+
+abeceda = 'abcčdefghijklmnoprsštuvzž.,';
+
+function enc_bin(c) {
+    var e = '';
+    for(var i = 5; i; i--) {
+        e += c < 16 ? '0' : '1';
+        c = (c & 15) << 1
+    }
+    return e;
+}
+
+
+function encode_all(txt) {
+    //alert("X");
+    txt = ' ' + txt.toLocaleLowerCase();
+    var i = 0;
+    var enc = '<p>';
+    for(c = 0; c < txt.length; c++) {
+        var e = abeceda.indexOf(txt[c]);
+        if (e == -1) {
+            while (e == -1) {
+                c++;
+                if (c == txt.length) {
+                    break;
+                }
+                var e = abeceda.indexOf(txt[c]);
+            }
+            if (c == txt.length) {
+                break;
+            }
+            i++;
+            enc += '</p>\n<p>' + i.toString() + '&nbsp;&nbsp;&nbsp;&nbsp;';
+        }
+        enc += enc_bin(e + 1) + '&nbsp;&nbsp;&nbsp;';
+    }
+    enc += "</p>";
+    document.getElementById('encoded').innerHTML = enc;
+}
+
+</script>
+</head>
+
+<body>
+<h1>Kodiranje besedila po besedah</h1>
+<textarea rows="10" cols="120" onkeyup="encode_all(this.value)"></textarea>
+<div style="border: 2px solid black" id="encoded"></div>
+</body>
+</html>
