@@ -16,7 +16,7 @@ Aktivnost osmisli prejšnjo: v prejšnji izvedo, da računalnik shranjuje le št
 
 Vaja predstavlja tudi urjenje v seštevanju števil do 25.
 
-**Potrebne predhodne aktivnosti:** [Do koliko lahko šteje stonoga?](/do-koliko-lahko-steje-stonoga)
+**Potrebne predhodne aktivnosti:** ((dvojiski-zapis-stevil | Do koliko lahko šteje stonoga?))
 
 Potrebščine
 -----------
