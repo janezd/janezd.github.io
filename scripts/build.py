@@ -5,7 +5,7 @@ import unicodedata
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
-static_files = ("o_strani.txt", "sorodne_strani.txt")
+static_files = ("o_strani.md", "sorodne_strani.md")
 
 
 class ActLinks(markdown.inlinepatterns.Pattern):
@@ -18,7 +18,7 @@ class ActLinks(markdown.inlinepatterns.Pattern):
             link = el.text = act
         el.text = el.text.strip()
         link = no_carets(link).lower()
-        if not os.path.exists(os.path.join("..", link, "index.txt")):
+        if not os.path.exists(os.path.join("..", link, "index.md")):
             print("Warning: missing internal link from {} to {}".
                 format(os.path.split(os.getcwd())[-1], link))
         el.set("href", "../" + link)
@@ -65,7 +65,7 @@ def use_template(template, **kwargs):
 def build_page():
     md = markdown.Markdown(extensions=["markdown.extensions.meta",
                                        ActLinkExtension()])
-    main = md.convert(open("index.txt").read())
+    main = md.convert(open("index.md").read())
     meta = defaultdict(str)
     meta.update(md.Meta)
 
@@ -100,7 +100,7 @@ for fname in static_files:
     mo_title = re.search("<h1>(.*?)</h1>", body)
     title = mo_title and ("Vidra - " + mo_title.group(1)) or site_title
     html = use_template(static, **locals())
-    open(fname[:-4] + ".html", "w").write(html)
+    open(os.path.splitext(fname)[0] + ".html", "w").write(html)
 
 all_pages = []
 for act in open("scripts/list.txt"):
