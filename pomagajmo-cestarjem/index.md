@@ -1,0 +1,23 @@
+Naslov: Pomagajmo cestarjem!
+Priprava: Pomagajmo cestarjem.pdf
+Datoteke: 
+	Zemljevidi.pdf
+Trajanje: Ena šolska ura
+Vir: 
+    http://csunplugged.org/minimal-spanning-trees CS Unplugged: Minimal Spanning Trees
+Povezave:
+	http://en.wikipedia.org/wiki/Minimal_spanning_tree Wikipedija: Najmanjše vpeto drevo
+	http://en.wikipedia.org/wiki/Greedy_algorithm Wikipedija: Požrešni algoritmi
+Povzetek:
+	Kako asfaltirati ceste v Blatnem dolu, da bo ostalo	dovolj denarja za
+	bazen? Kje bi potegnili ceste po Sloveniji, če ne bi bilo hribov in gora?
+
+Namen
+-----
+
+Otroci vidijo prvi primer optimizacijskega problema: podana je naloga, ve se, kakšne so njene dopustne rešitve, otroci pa morajo poiskati optimalno.
+
+Otroci utrjejo pojem algoritma v smislu natančno podanih navodil, ki jim je potrebno slediti in nas bodo zagotovo pripeljala do želenega cilja.
+
+Otroci prvič srečajo graf kot abstraktno predstavitev podatkov.
+Končno, konkreten problem, ki ga rešujejo, je aktualen sam zase: gre za problem iskanja v nekem smislu optimalnega omrežja. Mimogrede vidijo tudi, da optimalna rešitev v enem smislu (čim krajša vsota povezav) ni optimalna v vseh smislih (čim krajša povezava med vsakim parom točk).
