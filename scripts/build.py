@@ -42,6 +42,9 @@ def parse_section(files):
         if fname.startswith("http"):
             s += line.format(*fname.split(" ", 1))
         elif fname: 
+            if not os.path.exists(fname):
+                print("Warning: missing file {}/{}".
+                    format(os.path.split(os.getcwd())[-1], fname))
             s += line.format(fname, os.path.splitext(fname)[0])
     return s
 
