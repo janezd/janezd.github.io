@@ -58,5 +58,8 @@ Pač pa se otroci brez težav domislijo svojega postopka pretvarjanja. Otrok ve,
 
 Aktivnost je namerno oblikovana tako, da vodi v drugo, intuitivnejše pretvarjanje.
 
-Ob tem naj ponovno poudarimo, da namen aktivnosti ni naučiti se pretvarjati med dvojiškim in desetiškim zapisom, temveč "začutiti" dvojiški zapis, razumeti, kako je sestavljen in zakaj je uporaben – zato, ker lahko s pomočjo dvojiškega zapisa shranjujemo podatke ali pa jih prenašamo z vsakim medijem, ki ima dva različni stanji.
+Ob tem naj ponovno poudarimo, da namen aktivnosti ni naučiti se pretvarjati med dvojiškim in desetiškim zapisom, temveč "začutiti" dvojiški zapis, razumeti, kako je sestavljen in zakaj je uporaben – zato, ker lahko s pomočjo dvojiškega zapisa shranjujemo podatke ali pa jih prenašamo z vsakim medijem, ki ima dve različni stanji.
 
+Kontrolne naloge, ki preverjajo, ali otrok pravilno pretvarja iz desetiškega v dvojiški številski sistem in obratno, ne merijo, ali je učenec pridobil znanje, ki ga poskuša podati aktivnost.
+
+Razmišljanje o dvojiškem zapisu lahko služi tudi kot oporo pri razmišljanju o eksponentni rasti, kar bo prišlo prav pri kasnejših aktivnostih, katerih namen je pokazati, zakaj za nekatere vsakdanje probleme (vsaj v teoriji) ni mogoče najti optimalne rešitve. Če so otroci dovolj stari in se nameravamo z njimi kasneje globje pogovarjati o časovnih zahtevnostih, lahko pripravimo teren s pogovorom po tej aktivnosti.
