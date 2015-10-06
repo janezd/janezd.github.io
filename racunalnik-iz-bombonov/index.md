@@ -14,6 +14,7 @@ Povzetek:
 	Inteligentni papir ni inteligenten, ker se ni sam naučil igrati? Prav.
 	 Sestavili bomo računalnik iz plastičnih lončkov in bombonov, ki se bo sam
 	 učil igrati igro tako dobro, da bo vedno premagal človeka.
+Slike: 8792 378 8795 370
 
 Namen
 -----

@@ -3,6 +3,10 @@
 <title>Vidra - Piranski sladoledarji</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="../vidra.css"/>
+<link rel="stylesheet" href="../photoswipe/photoswipe.css"> 
+<link rel="stylesheet" href="../photoswipe/default-skin/default-skin.css"> 
+<script src="../photoswipe/photoswipe.min.js"></script> 
+<script src="../photoswipe/photoswipe-ui-default.min.js"></script> 
 </head>
 <body>
 <div id="header">
@@ -34,6 +38,8 @@
 <h2>Povezave</h2><p><a href="http://en.wikipedia.org/wiki/Dominating_set">Wikipedija: Minimalno pokritje</a></p>
 <p><a href="http://en.wikipedia.org/wiki/NP-complete">Wikipedija: NP-polni problemi</a></p>
 
+<div class="thumbs"><img src="thumbs/DSC_8577.jpg" onclick="openGallery(0)"/>
+<img src="thumbs/DSC_8608.jpg" onclick="openGallery(1)"/></div>
 </div>
 <div id="main">
 <h1>Piranski sladoledarji</h1>
@@ -57,7 +63,54 @@
 <div id="footer">
 <p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
 <p>Po pravilih licence <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons</a> je dovoljeno gradivo uporabljati in razširjati ob navedbi avtorjev. Komercialna raba in izvedena dela so prepovedana.</p>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var pswpElement = document.querySelectorAll('.pswp')[0];
+var items = [
+    {src: 'http://dajmi.fri.uni-lj.si/vidra/slike/DSC_8577.jpg', w: 1200, h: 803},
+    {src: 'http://dajmi.fri.uni-lj.si/vidra/slike/DSC_8608.jpg', w: 1200, h: 803},
+];
 
+function openGallery(i) {
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, {index: i});
+    gallery.init();
+}
+</script>
 <div class="clear"></div>
 </div>
 </body>

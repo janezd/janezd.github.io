@@ -11,6 +11,7 @@ Povzetek:
     Problem izmišljenih pisav je, da si jih človek težko zapomni. A ne za nas:
     spoznali bomo trik, s katerim si lahko izmišljamo nove pisave, ki si jih ni
     težko zapomniti.
+Slike: 296 299 356 8752 358
 
 Namen
 -----

@@ -8,6 +8,8 @@ Trajanje: 1 šolska ura
 Vir: http://csunplugged.org/binary-numbers CS Unplugged: Binary Numbers
 Povzetek:
 	Če zna računalnik zapisovati le številke – kako potem shrani besedila?
+Slike:
+    2606 2594 43 46 69 48 53 60 2622-001 2626 0071
 
 Namen
 -----

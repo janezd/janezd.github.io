@@ -16,6 +16,7 @@ Povzetek:
 	Alenka ne bo vrnila Petru žoge, dokler se ji ta ne opraviči za ono prej.
 	Ta pa se nima namena opravičiti, če mu one ne bo prej vrnila žoge.
 	Računalnikarji bi rekli, da sta se znašla v smrtnem objemu.
+Slike: 8686
 
 Namen
 -----

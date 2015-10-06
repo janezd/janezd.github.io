@@ -3,6 +3,10 @@
 <title>{{title}}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="../vidra.css"/>
+<link rel="stylesheet" href="../photoswipe/photoswipe.css"> 
+<link rel="stylesheet" href="../photoswipe/default-skin/default-skin.css"> 
+<script src="../photoswipe/photoswipe.min.js"></script> 
+<script src="../photoswipe/photoswipe-ui-default.min.js"></script> 
 </head>
 <body>
 <div id="header">

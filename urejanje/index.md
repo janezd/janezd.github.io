@@ -15,6 +15,7 @@ Povezave:
 	http://en.wikipedia.org/wiki/Time_complexity Wikipedija: Časovna zahtevnost
 Povzetek:
 	Ah, kolikokrat je potrebno urediti kakšne reči po abecedi, velikosti ali čem tretjem.
+Slike: 85 2821 221
 
 Namen
 -----

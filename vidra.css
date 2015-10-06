@@ -178,6 +178,14 @@ a, a:visited {
     clear: both; 
 }
 
+div.thumbs {
+    margin-top: 40px;
+}
+
+div.thumbs img {
+    border: solid 1px white;
+}
+
 #sidebar-toggle-checkbox {
     display: none;
 }

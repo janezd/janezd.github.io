@@ -1,11 +1,56 @@
 import os
 import re
+import struct
 from collections import defaultdict
 import unicodedata
+from urllib.request import urlopen
 import markdown
 
 site_title = "Vidra - Računalništvo brez računalnika"
 static_files = ("o_strani.md", "sorodne_strani.md")
+photos_url = "http://dajmi.fri.uni-lj.si/vidra/slike/"
+
+
+def parse_images(md):
+    def get_image_size(fname):
+        with urlopen(fname) as fhandle:
+            size = 2
+            ftype = 0
+            while not 0xc0 <= ftype <= 0xcf:
+                fhandle.read(size)
+                byte = fhandle.read(1)
+                while ord(byte) == 0xff:
+                    byte = fhandle.read(1)
+                ftype = ord(byte)
+                size = struct.unpack('>H', fhandle.read(2))[0] - 2
+            fhandle.read(1)
+            return struct.unpack('>HH', fhandle.read(4))
+
+    if not os.path.exists("thumbs"):
+        return "", ""
+    images = [x for x in os.listdir("thumbs")
+              if os.path.splitext(x)[1] == ".jpg"]
+    order = md.Meta.get("slike") or []
+    ordered = []
+    for img in " ".join(order).split():
+        for i, img1 in enumerate(images):
+            if os.path.splitext(img1)[0].endswith(img):
+                ordered.append(images.pop(i))
+                break
+        else:
+            print(images)
+            raise ValueError("Image {} does not exist".format(img))
+    images = ordered + images
+    img_thumbs = '<div class="thumbs">{}</div>'.format("\n".join(
+        '<img src="thumbs/{}" onclick="openGallery({})"/>'.format(img, i)
+        for i, img in enumerate(images)))
+    sizes = (get_image_size(photos_url + img) for img in images)
+    img_list = use_template(
+        gallery,
+        list="\n".join("    {{src: '{}{}', w: {}, h: {}}},".
+                       format(photos_url, img, w, h) for img, (h, w) in zip(images, sizes))
+    )
+    return img_thumbs, img_list
 
 
 class ActLinks(markdown.inlinepatterns.Pattern):
@@ -72,6 +117,7 @@ def build_page():
     meta = defaultdict(str)
     meta.update(md.Meta)
 
+    img_thumbs, img_list = parse_images(md)            
     duration = ("<b>Trajanje</b>: " + md.Meta.get("trajanje")[0]
                 if "trajanje" in md.Meta else "")
     title = md.Meta.get("naslov")[0]
@@ -94,6 +140,7 @@ def build_page():
 base_dir = os.getcwd()
 tpl = open("scripts/page.tpl").read()
 base = open("scripts/base.tpl").read()
+gallery = open("scripts/gallery.tpl").read()
 base_root = base.replace("../", "")
 static = base_root.replace('<div id="body">',
                            '<div id="body" class="no-sidebox">')

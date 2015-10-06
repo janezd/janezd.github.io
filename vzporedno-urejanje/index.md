@@ -19,6 +19,7 @@ Povzetek:
 	Koliko več bi lahko naredili, če bi imeli več rok! Ali pa … več glav?
 	Računalniki jih imajo. Da lahko isti problem rešujejo z “več glavami”
 	hkrati, pa moramo te glave pametno organizirati.
+Slike: 2760 154 2753 150 2795-001 126 141 2810 166 2878
 
 V tej aktivnosti se vrnemo k znani nalogi, urejanju, vendar tako, da seznam urejamo na več koncih hkrati.
 

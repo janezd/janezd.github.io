@@ -21,6 +21,7 @@ Povezave:
 Povzetek:
 	Do koliko lahko preštejemo s prsti obeh rok? Do deset, praviš? Neumnost.
 	Že s prsti ene roke je vendar mogoče šteti do 31.
+Slike: 1203 45 24
 
 Namen
 -----

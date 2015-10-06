@@ -3,6 +3,10 @@
 <title>Vidra - Do koliko lahko šteje stonoga?</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="../vidra.css"/>
+<link rel="stylesheet" href="../photoswipe/photoswipe.css"> 
+<link rel="stylesheet" href="../photoswipe/default-skin/default-skin.css"> 
+<script src="../photoswipe/photoswipe.min.js"></script> 
+<script src="../photoswipe/photoswipe-ui-default.min.js"></script> 
 </head>
 <body>
 <div id="header">
@@ -42,6 +46,9 @@
 <p><a href="http://en.wikipedia.org/wiki/Finger_binary">Wikipedia: Finger Counting</a></p>
 <p><a href="http://britton.disted.camosun.bc.ca/chinesering/ninering.html">Chinese Ring Puzzle</a></p>
 
+<div class="thumbs"><img src="thumbs/DSC_1203.jpg" onclick="openGallery(0)"/>
+<img src="thumbs/DSC_0045.jpg" onclick="openGallery(1)"/>
+<img src="thumbs/DSC_0024.jpg" onclick="openGallery(2)"/></div>
 </div>
 <div id="main">
 <h1>Do koliko lahko šteje stonoga?</h1>
@@ -67,13 +74,63 @@
 <p>Pri učenju pretvarjanja se žal pogosto uporablja sistem z ostanki. Recimo, da želimo v dvojiškem sistemu zapisati število 22. 22 delimo z 2, ostanek je 0, količnik 11. 11 delimo z 2, ostanek je 1, količnik je 5. 5 ima po deljenju z 2 ostanek 1, količnik 2. 2 ima ostanek 0, količnik 1. 1 ima ostanek 1, količnik 0. Preverjanje je končano, dvojiški zapis števila 22 dobimo tako, da preberemo ostanke v obratnem vrstnem redu, torej 10110. Tak postopek se resda uporablja, kadar pretvarjamo z računalniškim programom ali, morda, če bi ročno pretvarjali v sistem z višjo osnovo od 2. Za ročno pretvarjanje v dvojiški sistem pa je zapleten (ker je potrebno obračati) in neintuitiven, saj ga je otrokom težko utemeljiti.</p>
 <p>Pač pa se otroci brez težav domislijo svojega postopka pretvarjanja. Otrok ve, da ima na razpolago, recimo, števila 32, 16, 8, 4, 2, 1. Med njimi poišče največje število, ki je še manjše ali enako številu, ki ga pretvarjamo. V primeru 22 je to 16. 22 – 16 = 6. Za 6 spet poiščemo največje število, ki je manjše od 6; to je 4. 6 – 4 = 2. Največje število, ki je manjše ali enako 2 je kar 2. Torej je 22 enako 16 + 4 + 2. Če ob pretvarjanju v mislih ali zares dopisuje ničle in enka pod uporabljena in neuporabljena števila, dobi pretvorbo 010110 ali 10110. Ta sistem je preprostejši in razumljivejši.</p>
 <p>Aktivnost je namerno oblikovana tako, da vodi v drugo, intuitivnejše pretvarjanje.</p>
-<p>Ob tem naj ponovno poudarimo, da namen aktivnosti ni naučiti se pretvarjati med dvojiškim in desetiškim zapisom, temveč "začutiti" dvojiški zapis, razumeti, kako je sestavljen in zakaj je uporaben – zato, ker lahko s pomočjo dvojiškega zapisa shranjujemo podatke ali pa jih prenašamo z vsakim medijem, ki ima dva različni stanji.</p>
+<p>Ob tem naj ponovno poudarimo, da namen aktivnosti ni naučiti se pretvarjati med dvojiškim in desetiškim zapisom, temveč "začutiti" dvojiški zapis, razumeti, kako je sestavljen in zakaj je uporaben – zato, ker lahko s pomočjo dvojiškega zapisa shranjujemo podatke ali pa jih prenašamo z vsakim medijem, ki ima dve različni stanji.</p>
+<p>Kontrolne naloge, ki preverjajo, ali otrok pravilno pretvarja iz desetiškega v dvojiški številski sistem in obratno, ne merijo, ali je učenec pridobil znanje, ki ga poskuša podati aktivnost.</p>
+<p>Razmišljanje o dvojiškem zapisu lahko služi tudi kot oporo pri razmišljanju o eksponentni rasti, kar bo prišlo prav pri kasnejših aktivnostih, katerih namen je pokazati, zakaj za nekatere vsakdanje probleme (vsaj v teoriji) ni mogoče najti optimalne rešitve. Če so otroci dovolj stari in se nameravamo z njimi kasneje globje pogovarjati o časovnih zahtevnostih, lahko pripravimo teren s pogovorom po tej aktivnosti.</p>
 </div>
 </div>
 <div id="footer">
 <p>Kjer niso navedeni drugi specifični viri, je besedilo prevod in priredba projekta <a href="http://csunplugged.org">CS Unplugged</a>. Stran pripravlja in vzdržuje Janez Demšar.</p>
 <p>Po pravilih licence <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons</a> je dovoljeno gradivo uporabljati in razširjati ob navedbi avtorjev. Komercialna raba in izvedena dela so prepovedana.</p>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var pswpElement = document.querySelectorAll('.pswp')[0];
+var items = [
+    {src: 'http://dajmi.fri.uni-lj.si/vidra/slike/DSC_1203.jpg', w: 1200, h: 795},
+    {src: 'http://dajmi.fri.uni-lj.si/vidra/slike/DSC_0045.jpg', w: 1200, h: 800},
+    {src: 'http://dajmi.fri.uni-lj.si/vidra/slike/DSC_0024.jpg', w: 1200, h: 800},
+];
 
+function openGallery(i) {
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, {index: i});
+    gallery.init();
+}
+</script>
 <div class="clear"></div>
 </div>
 </body>
